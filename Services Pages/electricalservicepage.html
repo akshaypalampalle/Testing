@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electrician Services | Service Hub</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+   /* Header Styling */
+  header {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .menu-btn {
+    display: none;
+    background-color: #fff;
+    color: #2c5364;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .menu-btn:hover {
+    background-color: #ddd;
+  }
+
+  /* Dropdown Links */
+  .dropdown {
+    display: flex;
+    gap: 25px;
+  }
+
+  .dropdown a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
+  }
+
+  .dropdown a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background: #00c6ff;
+    transition: 0.4s;
+  }
+
+  .dropdown a:hover::after {
+    width: 100%;
+  }
+
+  .dropdown a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .menu-btn {
+      display: block;
+    }
+
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 70px;
+      right: 30px;
+      background: #2c5364;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    .dropdown.show {
+      display: flex;
+    }
+  }
+
+    /* Service Section Styling */
+    .services-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .services-section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #004080;
+      font-size: 2.5rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card h3 {
+      color: #004080;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .service-card p {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .price {
+      font-weight: bold;
+      color: green;
+      font-size: 1.2rem;
+    } 
+    
+    /* Service Highlights Section (Why Choose Us) */
+    .highlights-section {
+      background-color: #e0f0ff;
+      padding: 40px 20px;
+      margin-top: 40px;
+    }
+    
+    .highlights-section h3 {
+      text-align: center;
+      color: #004080;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    
+    .highlight-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    
+    .highlight-card h4 {
+      color: #004080;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    
+    .highlight-card p {
+      color: #333;
+    }
+    
+    /* Booking Section Styling */
+    .booking-section {
+      background-color: #e0f0ff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .booking-section h3 {
+      margin-bottom: 20px;
+      color: #004080;
+      font-size: 2rem;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, select, textarea, button {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #004080;
+      color: white;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #003366;
+    }
+
+    /* Footer Style */
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .services-section h2 {
+        font-size: 2rem;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .service-card h3 {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card h3 {
+        font-size: 1.1rem;
+      }
+
+      .price {
+        font-size: 1rem;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+
+    /* Footer Styling */
+  footer {
+    background: #0f2027;
+    color: #ccc;
+    text-align: center;
+    padding: 25px 10px;
+    font-size: 15px;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+  }
+
+  footer .social-icons {
+    margin-top: 10px;
+  }
+
+  footer .social-icons a {
+    color: #fff;
+    font-size: 22px;
+    padding: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  footer .social-icons a:hover {
+    background: #00c6ff;
+    transform: scale(1.2);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    footer .social-icons a {
+      font-size: 20px;
+      padding: 10px;
+    }
+  }
+  
+  </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+  <div class="logo">SERVICE HUB</div>
+  <button class="menu-btn">Menu</button>
+  <div class="dropdown">
+    <a href="../web.html">Home</a>
+    <a href="#services">Services</a>
+    <a href="aboutuspage.html">About</a>
+    <a href="#contact">Contact</a>
+    <a href="index.html">Login</a>
+  </div>
+</header>
+
+<!-- Services Section -->
+<section class="services-section">
+  <h2>Our Electrical Services</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <h3>Ceiling Fan Installation</h3>
+      <p>Proper fitting and wiring of ceiling fans with safety assurance.</p>
+      <p class="price">₹499</p>
+    </div>
+    <div class="service-card">
+      <h3>Light Fitting & Fixtures</h3>
+      <p>Wall lights, tube lights, LED panel installation.</p>
+      <p class="price">₹299</p>
+    </div>
+    <div class="service-card">
+      <h3>Switch Board Repair</h3>
+      <p>Repair or replace broken switches and sockets.</p>
+      <p class="price">₹399</p>
+    </div>
+    <div class="service-card">
+      <h3>Power Socket Installation</h3>
+      <p>New power points for appliances like geysers and microwaves.</p>
+      <p class="price">₹349</p>
+    </div>
+    <div class="service-card">
+      <h3>Inverter Installation</h3>
+      <p>Safe and efficient inverter connection and configuration.</p>
+      <p class="price">₹899</p>
+    </div>
+    <div class="service-card">
+      <h3>Wiring & Cabling</h3>
+      <p>Complete or partial rewiring of homes and offices.</p>
+      <p class="price">₹1499 onwards</p>
+    </div>
+    <div class="service-card">
+      <h3>MCB Installation</h3>
+      <p>Install and test miniature circuit breakers for safety.</p>
+      <p class="price">₹599</p>
+    </div>
+    <div class="service-card">
+      <h3>Door Bell Installation</h3>
+      <p>Install wired or wireless doorbells with neat finish.</p>
+      <p class="price">₹199</p>
+    </div>
+    <div class="service-card">
+      <h3>Emergency Electrical Repair</h3>
+      <p>24/7 emergency response for electric faults and issues.</p>
+      <p class="price">₹999</p>
+    </div>
+    <div class="service-card">
+      <h3>Appliance Wiring</h3>
+      <p>Wiring for ACs, geysers, washing machines, and more.</p>
+      <p class="price">₹749</p>
+    </div>
+  </div>
+</section>
+
+<!-- Service Highlights Section (Why Choose Us) -->
+<section class="highlights-section">
+    <h3>Why Choose Us?</h3>
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <h4>Expert Technicians</h4>
+        <p>Our team consists of highly trained professionals.</p>
+      </div>
+      <div class="highlight-card">
+        <h4>Affordable Rates</h4>
+        <p>We offer competitive and transparent pricing for all services.</p>
+      </div>
+      <div class="highlight-card">
+        <h4>24/7 Availability</h4>
+        <p>We provide round-the-clock emergency services.</p>
+      </div>
+    </div>
+  </section>  
+
+<!-- Booking Section -->
+<section class="booking-section">
+  <h3>Book a Service</h3>
+  <form action="book_service.php" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="tel" name="phone" placeholder="Phone Number" required />
+    <input type="email" name="email" placeholder="Email Address" required />
+    <select name="service" required>
+      <option value="">Select a Service</option>
+      <option value="Ceiling Fan Installation">Ceiling Fan Installation</option>
+      <option value="Light Fitting">Light Fitting & Fixtures</option>
+      <option value="Switch Board Repair">Switch Board Repair</option>
+      <option value="Power Socket Installation">Power Socket Installation</option>
+      <option value="Inverter Installation">Inverter Installation</option>
+      <option value="Wiring & Cabling">Wiring & Cabling</option>
+      <option value="MCB Installation">MCB Installation</option>
+      <option value="Door Bell Installation">Door Bell Installation</option>
+      <option value="Emergency Repair">Emergency Electrical Repair</option>
+      <option value="Appliance Wiring">Appliance Wiring</option>
+    </select>
+    <textarea name="address" placeholder="Your Address" rows="3" required></textarea>
+    
+    <!-- Date and Time Fields -->
+    <input type="date" name="date" required />
+    <input type="time" name="time" required />
+    
+    <button type="submit">Book Now</button>
+  </form>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <p>&copy; 2025 Service Hub. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank">.</a>
+      <a href="https://twitter.com" target="_blank">.</a>
+      <a href="https://instagram.com" target="_blank">.</a>
+    </div>
+</footer>
+
+</body>
+</html>
