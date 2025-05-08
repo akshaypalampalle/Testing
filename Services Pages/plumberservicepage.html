@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Electrician Services | Service Hub</title>
+  <title>Plumbing Services | Service Hub</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
     body {
@@ -105,14 +106,18 @@
   }
 
   /* Service Main image code */
-  .service-image {
-    display: block;
-    max-width: 80%;  /* Adjust this value if you want the image to occupy a smaller portion of the screen */
-    height: auto;
-    margin: 20px auto; /* Centers the image and adds spacing above and below */
-    border-radius: 10px;
+  .image-container {
+    text-align: center;
   }
-
+  
+  .service-image {
+    display: inline-block;
+    max-width: 80%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+  }  
+  
     /* Service Section Styling */
     .services-section {
       max-width: 1200px;
@@ -339,66 +344,68 @@
     <a href="#services">Services</a>
     <a href="aboutuspage.html">About</a>
     <a href="#contact">Contact</a>
-    <a href="index.html">Login</a>
+    <a href="../web.html">Login</a>
   </div>
 </header>
 
-<!-- Service Main Image -->
-<img src="https://images.pexels.com/photos/2898199/pexels-photo-2898199.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Electrician at work" class="service-image" />
+<!-- Main Service Image -->
+<div class="image-container">
+  <img class="service-image" src="https://media.istockphoto.com/id/921346102/photo/plumber-fixing-sink-pipe-with-adjustable-wrench.jpg?b=1&s=612x612&w=0&k=20&c=KR0DXemoVIpM8MSvqCRhnr-6S6M_TYZTS4P6DtzQ8sw=" alt="Plumber">
+</div>
 
 <!-- Services Section -->
 <section class="services-section">
-  <h2>Our Electrical Services</h2>
+  <h2>Our Plumbing Services</h2>
   <div class="service-grid">
     <div class="service-card">
-      <h3>Ceiling Fan Installation</h3>
-      <p>Proper fitting and wiring of ceiling fans with safety assurance.</p>
+      <h3>Leak Detection</h3>
+      <p>Identifying and fixing water leaks in pipes and faucets.</p>
       <p class="price">₹499</p>
     </div>
     <div class="service-card">
-      <h3>Light Fitting & Fixtures</h3>
-      <p>Wall lights, tube lights, LED panel installation.</p>
-      <p class="price">₹299</p>
-    </div>
-    <div class="service-card">
-      <h3>Switch Board Repair</h3>
-      <p>Repair or replace broken switches and sockets.</p>
-      <p class="price">₹399</p>
-    </div>
-    <div class="service-card">
-      <h3>Power Socket Installation</h3>
-      <p>New power points for appliances like geysers and microwaves.</p>
-      <p class="price">₹349</p>
-    </div>
-    <div class="service-card">
-      <h3>Inverter Installation</h3>
-      <p>Safe and efficient inverter connection and configuration.</p>
+      <h3>Pipe Installation</h3>
+      <p>Installation of new pipes for plumbing systems.</p>
       <p class="price">₹899</p>
     </div>
     <div class="service-card">
-      <h3>Wiring & Cabling</h3>
-      <p>Complete or partial rewiring of homes and offices.</p>
-      <p class="price">₹1499 onwards</p>
+      <h3>Drain Cleaning</h3>
+      <p>Cleaning of clogged drains to restore proper flow.</p>
+      <p class="price">₹399</p>
     </div>
     <div class="service-card">
-      <h3>MCB Installation</h3>
-      <p>Install and test miniature circuit breakers for safety.</p>
-      <p class="price">₹599</p>
+      <h3>Water Heater Repair</h3>
+      <p>Repairing and maintaining water heaters for optimal performance.</p>
+      <p class="price">₹799</p>
     </div>
     <div class="service-card">
-      <h3>Door Bell Installation</h3>
-      <p>Install wired or wireless doorbells with neat finish.</p>
-      <p class="price">₹199</p>
+      <h3>Faucet Repair</h3>
+      <p>Fixing leaky or broken faucets in the bathroom and kitchen.</p>
+      <p class="price">₹299</p>
     </div>
     <div class="service-card">
-      <h3>Emergency Electrical Repair</h3>
-      <p>24/7 emergency response for electric faults and issues.</p>
-      <p class="price">₹999</p>
+      <h3>Toilet Installation</h3>
+      <p>Installation of new toilets with correct fittings.</p>
+      <p class="price">₹1499</p>
     </div>
     <div class="service-card">
-      <h3>Appliance Wiring</h3>
-      <p>Wiring for ACs, geysers, washing machines, and more.</p>
-      <p class="price">₹749</p>
+      <h3>Sewer Line Inspection</h3>
+      <p>Inspection and cleaning of sewer lines to prevent blockages.</p>
+      <p class="price">₹899</p>
+    </div>
+    <div class="service-card">
+      <h3>Water Pressure Problems</h3>
+      <p>Fixing issues related to low or high water pressure.</p>
+      <p class="price">₹499</p>
+    </div>
+    <div class="service-card">
+      <h3>Plumbing Maintenance</h3>
+      <p>Regular maintenance to prevent plumbing issues.</p>
+      <p class="price">₹699</p>
+    </div>
+    <div class="service-card">
+      <h3>Backflow Prevention</h3>
+      <p>Installing backflow preventers to avoid contamination of drinking water.</p>
+      <p class="price">₹1099</p>
     </div>
   </div>
 </section>
@@ -431,17 +438,18 @@
     <input type="email" name="email" placeholder="Email Address" required />
     <select name="service" required>
       <option value="">Select a Service</option>
-      <option value="Ceiling Fan Installation">Ceiling Fan Installation – ₹499</option>
-      <option value="Light Fitting">Light Fitting & Fixtures – ₹299</option>
-      <option value="Switch Board Repair">Switch Board Repair – ₹399</option>
-      <option value="Power Socket Installation">Power Socket Installation – ₹349</option>
-      <option value="Inverter Installation">Inverter Installation – ₹899</option>
-      <option value="Wiring & Cabling">Wiring & Cabling – ₹1499 onwards</option>
-      <option value="MCB Installation">MCB Installation – ₹599</option>
-      <option value="Door Bell Installation">Door Bell Installation – ₹199</option>
-      <option value="Emergency Repair">Emergency Electrical Repair – ₹999</option>
-      <option value="Appliance Wiring">Appliance Wiring – ₹749</option>
+      <option value="Leak Detection">Leak Detection – ₹499</option>
+      <option value="Pipe Installation">Pipe Installation – ₹899</option>
+      <option value="Drain Cleaning">Drain Cleaning – ₹399</option>
+      <option value="Water Heater Repair">Water Heater Repair – ₹799</option>
+      <option value="Faucet Repair">Faucet Repair – ₹299</option>
+      <option value="Toilet Installation">Toilet Installation – ₹1499</option>
+      <option value="Sewer Line Inspection">Sewer Line Inspection – ₹899</option>
+      <option value="Water Pressure Problems">Water Pressure Problems – ₹499</option>
+      <option value="Plumbing Maintenance">Plumbing Maintenance – ₹699</option>
+      <option value="Backflow Prevention">Backflow Prevention – ₹1099</option>
     </select>
+    
     <textarea name="address" placeholder="Your Address" rows="3" required></textarea>
     
     <!-- Date and Time Fields -->

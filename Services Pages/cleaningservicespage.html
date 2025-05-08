@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Electrician Services | Service Hub</title>
+  <title>Cleaning Services | Service Hub</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
     body {
@@ -104,14 +105,18 @@
     }
   }
 
-  /* Service Main image code */
-  .service-image {
-    display: block;
-    max-width: 80%;  /* Adjust this value if you want the image to occupy a smaller portion of the screen */
-    height: auto;
-    margin: 20px auto; /* Centers the image and adds spacing above and below */
-    border-radius: 10px;
+  /* Main Serice Image */
+  .image-container {
+    text-align: center;
   }
+  
+  .service-image {
+    display: inline-block;
+    max-width: 80%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+  }  
 
     /* Service Section Styling */
     .services-section {
@@ -253,39 +258,9 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .services-section h2 {
-        font-size: 2rem;
-      }
-
-      .service-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .service-card h3 {
-        font-size: 1.3rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-card h3 {
-        font-size: 1.1rem;
-      }
-
-      .price {
-        font-size: 1rem;
-      }
-
-      button {
-        font-size: 14px;
-        padding: 8px;
+      footer .social-icons a {
+        font-size: 20px;
+        padding: 10px;
       }
     }
 
@@ -317,14 +292,6 @@
     background: #00c6ff;
     transform: scale(1.2);
   }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    footer .social-icons a {
-      font-size: 20px;
-      padding: 10px;
-    }
-  }
   
   </style>
 </head>
@@ -343,62 +310,64 @@
   </div>
 </header>
 
-<!-- Service Main Image -->
-<img src="https://images.pexels.com/photos/2898199/pexels-photo-2898199.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Electrician at work" class="service-image" />
+<!-- Main Service Image -->
+<div class="image-container">
+  <img class="service-image" src="https://images.pexels.com/photos/713297/pexels-photo-713297.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Plumber">
+</div>
 
 <!-- Services Section -->
 <section class="services-section">
-  <h2>Our Electrical Services</h2>
+  <h2>Our Cleaning Services</h2>
   <div class="service-grid">
     <div class="service-card">
-      <h3>Ceiling Fan Installation</h3>
-      <p>Proper fitting and wiring of ceiling fans with safety assurance.</p>
-      <p class="price">₹499</p>
+      <h3>House Cleaning</h3>
+      <p>Comprehensive cleaning of your entire house, including floors, furniture, and fixtures.</p>
+      <p class="price">₹799</p>
     </div>
     <div class="service-card">
-      <h3>Light Fitting & Fixtures</h3>
-      <p>Wall lights, tube lights, LED panel installation.</p>
-      <p class="price">₹299</p>
+      <h3>Office Cleaning</h3>
+      <p>Professional cleaning for your office, including workstations, bathrooms, and common areas.</p>
+      <p class="price">₹1199</p>
     </div>
     <div class="service-card">
-      <h3>Switch Board Repair</h3>
-      <p>Repair or replace broken switches and sockets.</p>
-      <p class="price">₹399</p>
-    </div>
-    <div class="service-card">
-      <h3>Power Socket Installation</h3>
-      <p>New power points for appliances like geysers and microwaves.</p>
-      <p class="price">₹349</p>
-    </div>
-    <div class="service-card">
-      <h3>Inverter Installation</h3>
-      <p>Safe and efficient inverter connection and configuration.</p>
-      <p class="price">₹899</p>
-    </div>
-    <div class="service-card">
-      <h3>Wiring & Cabling</h3>
-      <p>Complete or partial rewiring of homes and offices.</p>
-      <p class="price">₹1499 onwards</p>
-    </div>
-    <div class="service-card">
-      <h3>MCB Installation</h3>
-      <p>Install and test miniature circuit breakers for safety.</p>
+      <h3>Carpet Cleaning</h3>
+      <p>Deep cleaning and sanitization of your carpets and rugs.</p>
       <p class="price">₹599</p>
     </div>
     <div class="service-card">
-      <h3>Door Bell Installation</h3>
-      <p>Install wired or wireless doorbells with neat finish.</p>
-      <p class="price">₹199</p>
+      <h3>Window Cleaning</h3>
+      <p>Cleaning of windows and glass surfaces, inside and out.</p>
+      <p class="price">₹399</p>
     </div>
     <div class="service-card">
-      <h3>Emergency Electrical Repair</h3>
-      <p>24/7 emergency response for electric faults and issues.</p>
+      <h3>Post Construction Cleaning</h3>
+      <p>Thorough cleaning of homes and offices after construction or renovation work.</p>
+      <p class="price">₹1499</p>
+    </div>
+    <div class="service-card">
+      <h3>Kitchen Cleaning</h3>
+      <p>Cleaning and sanitization of kitchen surfaces, cabinets, and appliances.</p>
+      <p class="price">₹799</p>
+    </div>
+    <div class="service-card">
+      <h3>Bathroom Cleaning</h3>
+      <p>Deep cleaning of all bathroom surfaces, including sinks, tubs, and toilets.</p>
+      <p class="price">₹499</p>
+    </div>
+    <div class="service-card">
+      <h3>Move-in/Move-out Cleaning</h3>
+      <p>Thorough cleaning before moving into or out of a property.</p>
+      <p class="price">₹1299</p>
+    </div>
+    <div class="service-card">
+      <h3>Upholstery Cleaning</h3>
+      <p>Cleaning of sofas, chairs, and other upholstered furniture.</p>
+      <p class="price">₹699</p>
+    </div>
+    <div class="service-card">
+      <h3>Steam Cleaning</h3>
+      <p>Steam cleaning services for carpets, furniture, and other soft furnishings.</p>
       <p class="price">₹999</p>
-    </div>
-    <div class="service-card">
-      <h3>Appliance Wiring</h3>
-      <p>Wiring for ACs, geysers, washing machines, and more.</p>
-      <p class="price">₹749</p>
     </div>
   </div>
 </section>
@@ -431,17 +400,18 @@
     <input type="email" name="email" placeholder="Email Address" required />
     <select name="service" required>
       <option value="">Select a Service</option>
-      <option value="Ceiling Fan Installation">Ceiling Fan Installation – ₹499</option>
-      <option value="Light Fitting">Light Fitting & Fixtures – ₹299</option>
-      <option value="Switch Board Repair">Switch Board Repair – ₹399</option>
-      <option value="Power Socket Installation">Power Socket Installation – ₹349</option>
-      <option value="Inverter Installation">Inverter Installation – ₹899</option>
-      <option value="Wiring & Cabling">Wiring & Cabling – ₹1499 onwards</option>
-      <option value="MCB Installation">MCB Installation – ₹599</option>
-      <option value="Door Bell Installation">Door Bell Installation – ₹199</option>
-      <option value="Emergency Repair">Emergency Electrical Repair – ₹999</option>
-      <option value="Appliance Wiring">Appliance Wiring – ₹749</option>
+      <option value="House Cleaning">House Cleaning – ₹799</option>
+      <option value="Office Cleaning">Office Cleaning – ₹1199</option>
+      <option value="Carpet Cleaning">Carpet Cleaning – ₹599</option>
+      <option value="Window Cleaning">Window Cleaning – ₹399</option>
+      <option value="Post Construction Cleaning">Post Construction Cleaning – ₹1499</option>
+      <option value="Kitchen Cleaning">Kitchen Cleaning – ₹799</option>
+      <option value="Bathroom Cleaning">Bathroom Cleaning – ₹499</option>
+      <option value="Move-in/Move-out Cleaning">Move-in/Move-out Cleaning – ₹1299</option>
+      <option value="Upholstery Cleaning">Upholstery Cleaning – ₹699</option>
+      <option value="Steam Cleaning">Steam Cleaning – ₹999</option>
     </select>
+    
     <textarea name="address" placeholder="Your Address" rows="3" required></textarea>
     
     <!-- Date and Time Fields -->

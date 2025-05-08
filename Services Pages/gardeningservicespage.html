@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gardening Services | Service Hub</title>
+  <style>
+   
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+  
+     /* Header Styling */
+    header {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+  
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #fff;
+    }
+  
+    .menu-btn {
+      display: none;
+      background-color: #fff;
+      color: #2c5364;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+  
+    .menu-btn:hover {
+      background-color: #ddd;
+    }
+  
+    /* Dropdown Links */
+    .dropdown {
+      display: flex;
+      gap: 25px;
+    }
+  
+    .dropdown a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 17px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+  
+    .dropdown a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background: #00c6ff;
+      transition: 0.4s;
+    }
+  
+    .dropdown a:hover::after {
+      width: 100%;
+    }
+  
+    .dropdown a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+  
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block;
+      }
+  
+      .dropdown {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 30px;
+        background: #2c5364;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      }
+  
+      .dropdown.show {
+        display: flex;
+      }
+    }
+
+    /* Service Main image code */
+    .image-container {
+      text-align: center;
+    }
+    
+    .service-image {
+      display: inline-block;
+      max-width: 80%;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 10px;
+    }  
+  
+      /* Service Section Styling */
+      .services-section {
+        max-width: 1200px;
+        margin: auto;
+        padding: 40px 20px;
+      }
+  
+      .services-section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #004080;
+        font-size: 2.5rem;
+      }
+  
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+  
+      .service-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+  
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+  
+      .service-card h3 {
+        color: #004080;
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+      }
+  
+      .service-card p {
+        margin: 0 0 10px;
+        font-size: 1rem;
+      }
+  
+      .price {
+        font-weight: bold;
+        color: green;
+        font-size: 1.2rem;
+      } 
+      
+      /* Service Highlights Section (Why Choose Us) */
+      .highlights-section {
+        background-color: #e0f0ff;
+        padding: 40px 20px;
+        margin-top: 40px;
+      }
+      
+      .highlights-section h3 {
+        text-align: center;
+        color: #004080;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+      
+      .highlights-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      
+      .highlight-card {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+      
+      .highlight-card h4 {
+        color: #004080;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      
+      .highlight-card p {
+        color: #333;
+      }
+      
+      /* Booking Section Styling */
+      .booking-section {
+        background-color: #e0f0ff;
+        padding: 40px 20px;
+        text-align: center;
+      }
+  
+      .booking-section h3 {
+        margin-bottom: 20px;
+        color: #004080;
+        font-size: 2rem;
+      }
+  
+      form {
+        max-width: 600px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+  
+      input, select, textarea, button {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      button {
+        background-color: #004080;
+        color: white;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s;
+      }
+  
+      button:hover {
+        background-color: #003366;
+      }
+  
+      /* Footer Style */
+      footer {
+        background-color: #004080;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-size: 1rem;
+      }
+  
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+  
+        .services-section h2 {
+          font-size: 2rem;
+        }
+  
+        .service-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+  
+        .service-card h3 {
+          font-size: 1.3rem;
+        }
+      }
+  
+      @media (max-width: 480px) {
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+  
+        .service-card h3 {
+          font-size: 1.1rem;
+        }
+  
+        .price {
+          font-size: 1rem;
+        }
+  
+        button {
+          font-size: 14px;
+          padding: 8px;
+        }
+      }
+  
+      /* Footer Styling */
+    footer {
+      background: #0f2027;
+      color: #ccc;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 15px;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+    }
+  
+    footer .social-icons {
+      margin-top: 10px;
+    }
+  
+    footer .social-icons a {
+      color: #fff;
+      font-size: 22px;
+      padding: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+  
+    footer .social-icons a:hover {
+      background: #00c6ff;
+      transform: scale(1.2);
+    }
+  
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      footer .social-icons a {
+        font-size: 20px;
+        padding: 10px;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SERVICE HUB</div>
+  <button class="menu-btn">Menu</button>
+  <div class="dropdown">
+    <a href="../web.html">Home</a>
+    <a href="#services">Services</a>
+    <a href="aboutuspage.html">About</a>
+    <a href="#contact">Contact</a>
+    <a href="index.html">Login</a>
+  </div>
+</header>
+
+<!-- Main Service Image -->
+<div class="image-container">
+  <img class="service-image" src="https://images.pexels.com/photos/1301856/pexels-photo-1301856.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Plumber">
+</div>
+
+<section class="services-section">
+  <h2>Our Gardening Services</h2>
+  <div class="service-grid">
+    <div class="service-card">
+      <h3>Lawn Mowing</h3>
+      <p>Regular or one-time grass cutting and trimming.</p>
+      <p class="price">₹499 per visit</p>
+    </div>
+    <div class="service-card">
+      <h3>Hedge Trimming</h3>
+      <p>Neat shaping and trimming of garden hedges.</p>
+      <p class="price">₹699 onwards</p>
+    </div>
+    <div class="service-card">
+      <h3>Weeding Service</h3>
+      <p>Removal of unwanted plants from garden beds.</p>
+      <p class="price">₹399 onwards</p>
+    </div>
+    <div class="service-card">
+      <h3>Garden Cleaning</h3>
+      <p>Clean-up of fallen leaves, twigs, and debris.</p>
+      <p class="price">₹599 per session</p>
+    </div>
+    <div class="service-card">
+      <h3>Planting & Re-potting</h3>
+      <p>Plant new greens or transfer them to better pots.</p>
+      <p class="price">₹299 per plant</p>
+    </div>
+    <div class="service-card">
+      <h3>Organic Manuring</h3>
+      <p>Enrich your garden soil with natural fertilizers.</p>
+      <p class="price">₹499 per application</p>
+    </div>
+    <div class="service-card">
+      <h3>Vertical Garden Setup</h3>
+      <p>Create stunning green walls in your space.</p>
+      <p class="price">₹1,999 onwards</p>
+    </div>
+    <div class="service-card">
+      <h3>Garden Pest Control</h3>
+      <p>Safe pest control solutions for your plants.</p>
+      <p class="price">₹899 per visit</p>
+    </div>
+    <div class="service-card">
+      <h3>Drip Irrigation Setup</h3>
+      <p>Efficient water management for your garden.</p>
+      <p class="price">₹1,299 onwards</p>
+    </div>
+    <div class="service-card">
+      <h3>Seasonal Flower Beds</h3>
+      <p>Design and planting of colorful seasonal flowers.</p>
+      <p class="price">₹799 onwards</p>
+    </div>
+  </div>
+</section>
+
+<section class="highlights-section">
+  <h3>Why Choose Us?</h3>
+  <div class="highlights-grid">
+    <div class="highlight-card">
+      <h4>Expert Gardeners</h4>
+      <p>Our team has years of experience in garden maintenance.</p>
+    </div>
+    <div class="highlight-card">
+      <h4>Eco-Friendly Practices</h4>
+      <p>We use organic and sustainable gardening methods.</p>
+    </div>
+    <div class="highlight-card">
+      <h4>Affordable Pricing</h4>
+      <p>Transparent pricing with no hidden charges.</p>
+    </div>
+  </div>
+</section>  
+
+<section class="booking-section">
+  <h3>Book a Service</h3>
+  <form action="book_service.php" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="tel" name="phone" placeholder="Phone Number" required />
+    <input type="email" name="email" placeholder="Email Address" required />
+    <select name="service" required>
+      <option value="">Select a Service</option>
+      <option value="Lawn Mowing">Lawn Mowing – ₹499 per visit</option>
+      <option value="Hedge Trimming">Hedge Trimming – ₹699 onwards</option>
+      <option value="Weeding Service">Weeding Service – ₹399 onwards</option>
+      <option value="Garden Cleaning">Garden Cleaning – ₹599 per session</option>
+      <option value="Planting & Re-potting">Planting & Re-potting – ₹299 per plant</option>
+      <option value="Organic Manuring">Organic Manuring – ₹499 per application</option>
+      <option value="Vertical Garden Setup">Vertical Garden Setup – ₹1,999 onwards</option>
+      <option value="Garden Pest Control">Garden Pest Control – ₹899 per visit</option>
+      <option value="Drip Irrigation Setup">Drip Irrigation Setup – ₹1,299 onwards</option>
+      <option value="Seasonal Flower Beds">Seasonal Flower Beds – ₹799 onwards</option>
+    </select>
+    <textarea name="address" placeholder="Your Address" rows="3" required></textarea>
+    <input type="date" name="date" required />
+    <input type="time" name="time" required />
+    <button type="submit">Book Now</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Service Hub. All rights reserved.</p>
+  <div class="social-icons">
+    <a href="https://facebook.com" target="_blank">.</a>
+    <a href="https://twitter.com" target="_blank">.</a>
+    <a href="https://instagram.com" target="_blank">.</a>
+  </div>
+</footer>
+
+</body>
+</html>
