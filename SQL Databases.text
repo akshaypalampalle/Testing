@@ -1,4 +1,21 @@
+1. Here's the SQL script to create the database and the users table for your registration system: //
 
+-- Create the database
+CREATE DATABASE IF NOT EXISTS servicehub;
+USE servicehub;
+
+-- Create the 'users' table
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    mobile VARCHAR(10) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+2. This is the Service Booking's SQL Database that books services throw form 
 
 -- Create the database
 CREATE DATABASE IF NOT EXISTS servicehub;
