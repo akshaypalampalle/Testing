@@ -128,7 +128,7 @@ $booking = $_SESSION['booking'] ?? null;
     <?php endif; ?>
 
     <div class="btn-group">
-      <a href="../web.html" class="btn">Return to Home</a>
+      <a href="../index.html" class="btn">Return to Home</a>
       <button onclick="window.print()" class="btn print">Print Receipt</button>
     </div>
   </div>
