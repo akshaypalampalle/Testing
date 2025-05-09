@@ -29,7 +29,7 @@ if ($result->num_rows > 0) {
 
     // Verify the password
     if (password_verify($password, $user['password'])) {
-        header("Location: ../web.html");
+        header("Location: ../index.html");
         
     } else {
         echo "Invalid password.";
